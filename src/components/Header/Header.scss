@@ -1,0 +1,24 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+
+.header {
+    display: flex;
+    width: $width;
+    justify-content: space-between;
+    background-color: white;
+    height: 100px;
+
+    &__left-side {
+        display: flex;
+        align-items: center;
+
+        & > a {
+            margin: 16px;
+        }
+    }
+
+    &__right-side {
+        display: flex;
+        align-items: center;
+    }
+}

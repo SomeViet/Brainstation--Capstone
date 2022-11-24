@@ -1,0 +1,11 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+
+.footer {
+    display: flex;
+    width: $width;
+    background-color: white;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}

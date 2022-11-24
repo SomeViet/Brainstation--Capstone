@@ -1,0 +1,14 @@
+@use "./fonts" as *;
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Avenir";
+}
+
+body {
+    background-color: lightgrey;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
