@@ -1,0 +1,22 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typekit" as *;
+
+.food-button {
+    @include button;
+    display: flex;
+    height: 124px;
+    border-radius: 16px;
+    border: 0px;
+    background-color: lightsalmon;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    &__button {
+        @include button;
+        height: 124px;
+        border: 0px;
+        background-color: transparent;
+    }
+}

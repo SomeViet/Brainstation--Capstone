@@ -1,1 +1,21 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typekit" as *;
 
+.home {
+    display: flex;
+    flex-direction: column;
+    background-color: $offwhite;
+
+    &__header {
+        @include pageheader;
+        align-self: center;
+    }
+
+    &__selection {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin: 24px;
+    }
+}

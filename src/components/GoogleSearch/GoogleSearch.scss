@@ -1,0 +1,55 @@
+.map {
+    height: 600px;
+    width: 600px;
+}
+
+.searchbox {
+    height: 20px;
+    width: 600px;
+}
+
+#sidebar {
+    flex-basis: 80px;
+    flex-grow: 1;
+    padding: 0px;
+    max-width: 360px;
+    // height: auto;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+#container {
+    display: flex;
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 0 0 5px 0;
+    flex-grow: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+}
+
+li {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+li:nth-child(odd) {
+    background-color: #fcfcfc;
+}

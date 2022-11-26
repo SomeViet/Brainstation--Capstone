@@ -1,0 +1,27 @@
+[
+    {
+        "id": "111",
+        "cuisine": "japanese",
+        "dishes": ["ramen", "sushi", "donburi"]
+    },
+    {
+        "id": "222",
+        "cuisine": "chinese",
+        "dishes": ["stiryfry", "dumplings", "beef noodles"]
+    },
+    {
+        "id": "333",
+        "cuisine": "american",
+        "dishes": ["burgers", "steak", "cheesecake"]
+    },
+    {
+        "id": "444",
+        "cuisine": "korean",
+        "dishes": ["bimbab", "KFC", "donburi"]
+    },
+    {
+        "id": "555",
+        "cuisine": "mexican",
+        "dishes": ["tacos", "burritos", "tequila"]
+    }
+]

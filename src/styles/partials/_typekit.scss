@@ -1,0 +1,32 @@
+@use "variables" as *;
+
+@mixin pageheader {
+    font-size: 33px;
+    line-height: 44px;
+    font-weight: 700;
+}
+@mixin sectionheader {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+}
+@mixin subheader {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+}
+@mixin bodycopy {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+}
+@mixin labelbutton {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+}
+@mixin button {
+    font-size: 36px;
+    line-height: 20px;
+    font-weight: 700;
+}

@@ -1,12 +1,8 @@
 import "./styles/App.scss";
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import ContactUs from "./pages/ContactUs/ContactUs";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import Japanese from "./pages/Japanese/Japanese";
-import FoodSearch from "./pages/FoodSearch/FoodSearch";
+import { Header, Footer } from "./components/index";
+import { Home, Cuisine, FoodSearch, ContactUs } from "./pages/index";
 
 export default class App extends React.Component {
     render() {
@@ -21,8 +17,8 @@ export default class App extends React.Component {
                         <Route path="/contactus">
                             <ContactUs />
                         </Route>
-                        <Route path="/japanese">
-                            <Japanese />
+                        <Route path="/cuisine">
+                            <Cuisine />
                         </Route>
                         <Route path="/foodsearch">
                             <FoodSearch />
