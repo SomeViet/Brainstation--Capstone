@@ -17,14 +17,13 @@ export default class App extends React.Component {
                         <Route path="/contactus">
                             <ContactUs />
                         </Route>
-                        <Route path="/cuisine">
+                        <Route path="/cuisine/:cuisineId">
                             <Cuisine />
                         </Route>
-                        <Route path="/foodsearch">
+                        <Route path="/foodsearch/:foodName">
                             <FoodSearch />
                         </Route>
                     </Switch>
-                    <div>This is a app page</div>
                     <Footer />
                 </BrowserRouter>
             </>

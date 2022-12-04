@@ -1,11 +1,16 @@
 import "./FoodSearch.scss";
 import React from "react";
 import GoogleSearch from "../../components/GoogleSearch/GoogleSearch";
+import { withRouter } from "react-router-dom";
 
-export default function FoodSearch() {
+function FoodSearch(props) {
+    let foodSearch = props.match.params.foodName;
+
     return (
         <>
-            <GoogleSearch />
+            <GoogleSearch foodSearch={foodSearch} />
         </>
     );
 }
+
+export default withRouter(FoodSearch);

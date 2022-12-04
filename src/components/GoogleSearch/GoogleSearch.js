@@ -2,13 +2,14 @@ import "./GoogleSearch.scss";
 import React from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 
-export default function GoogleSearch() {
+export default function GoogleSearch({ foodSearch }) {
     const loader = new Loader({
         apiKey: "AIzaSyC6axoOOEq8kjBPHcDmJM5mCNyU__-k4Vc",
         version: "weekly",
         libraries: ["places"],
     });
 
+    console.log(foodSearch);
     loader
         .load()
         .then((google) => {
