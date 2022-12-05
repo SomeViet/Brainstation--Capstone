@@ -26,8 +26,8 @@ class Cuisine extends React.Component {
             .get(`http://localhost:${PORT}/cuisine`)
             .then((res) => {
                 // Set Cuisine Header
-                let filteredCuisine = res.data.find((cuisine) => {
-                    return cuisine.id === this.cuisineId;
+                let filteredCuisine = res.data.find((cuisineData) => {
+                    return cuisineData.id === parseInt(this.cuisineId);
                 });
                 this.setState({
                     cuisineName: filteredCuisine.cuisine,
@@ -44,8 +44,9 @@ class Cuisine extends React.Component {
             .then((res) => {
                 // Get cuisine Id from props, filter food, and set state
                 let filteredFood = res.data.filter((food) => {
-                    return food.cuisine_id === this.cuisineId;
+                    return food.cuisine_id === parseInt(this.cuisineId);
                 });
+
                 this.setState({
                     foodData: filteredFood,
                 });

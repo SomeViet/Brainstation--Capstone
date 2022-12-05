@@ -1,6 +1,6 @@
 import "./FoodSearch.scss";
 import React from "react";
-import GoogleSearch from "../../components/GoogleSearch/GoogleSearch";
+import { GoogleSearch } from "../../components/index";
 import { withRouter } from "react-router-dom";
 
 function FoodSearch(props) {

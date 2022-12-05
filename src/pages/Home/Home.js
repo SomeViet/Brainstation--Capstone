@@ -34,7 +34,7 @@ export default class Home extends React.Component {
         return (
             <>
                 <main className="home">
-                    <h1 className="home__header">I'm Hungry</h1>
+                    <h1 className="home__header">I Am Hungry</h1>
                     <div className="home__selection">
                         {this.state.cuisineData
                             ? this.state.cuisineData.map((cuisineData) => {
