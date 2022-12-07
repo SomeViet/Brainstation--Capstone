@@ -1,14 +1,16 @@
 import "./GoogleSearch.scss";
-import React from "react";
+import React, { useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 
 export default function GoogleSearch({ foodSearch }) {
+    // Using functional hooks for state
+    const [location, setLocation] = useState({ lat: 49.2827, lng: -123.1207 });
+
     const loader = new Loader({
         apiKey: "AIzaSyC6axoOOEq8kjBPHcDmJM5mCNyU__-k4Vc",
         version: "weekly",
         libraries: ["places"],
     });
-    const location = { lat: 49.2827, lng: -123.1207 };
 
     loader
         .load()
@@ -25,13 +27,15 @@ export default function GoogleSearch({ foodSearch }) {
 
             const infoWindow = new google.maps.InfoWindow();
 
+            // Adds the current location button
             const locationButton = document.createElement("button");
-            locationButton.textContent = "Pan to Current Location";
-            locationButton.classList.add("custom-map-control-button");
-            map.controls[google.maps.ControlPosition.TOP_CENTER].push(
+            locationButton.textContent = "My Current Location";
+            locationButton.classList.add("googlesearch");
+            map.controls[google.maps.ControlPosition.TOP_RIGHT].push(
                 locationButton
             );
 
+            // Event listener for current location
             locationButton.addEventListener("click", () => {
                 // Try HTML5 geolocation.
                 if (navigator.geolocation) {
@@ -41,13 +45,15 @@ export default function GoogleSearch({ foodSearch }) {
                                 lat: position.coords.latitude,
                                 lng: position.coords.longitude,
                             };
-                            console.log(pos);
+                            setLocation(pos);
+                            console.log(location);
 
                             infoWindow.setPosition(pos);
                             infoWindow.setContent("You are here");
                             infoWindow.open(map);
                             map.setCenter(pos);
                         },
+                        // Error handling if browser doesn't have geolocation
                         () => {
                             handleLocationError(
                                 true,
@@ -62,6 +68,7 @@ export default function GoogleSearch({ foodSearch }) {
                 }
             });
 
+            // Error handling if browser doesn't have geolocation
             function handleLocationError(
                 browserHasGeolocation: boolean,
                 infoWindow: google.maps.InfoWindow,
@@ -126,6 +133,7 @@ export default function GoogleSearch({ foodSearch }) {
 
             // Use PlacesService app and do a nearby search
             const service = new google.maps.places.PlacesService(map);
+
             service.textSearch(
                 // Search criterias
                 {

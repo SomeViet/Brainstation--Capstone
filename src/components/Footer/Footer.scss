@@ -2,9 +2,10 @@
 @use "../../styles/partials/variables" as *;
 
 .footer {
+    @include displaybackground;
     display: flex;
     width: $width;
-    background-color: white;
+
     height: 100px;
     align-items: center;
     justify-content: center;

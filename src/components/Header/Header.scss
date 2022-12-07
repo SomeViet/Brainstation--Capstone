@@ -1,19 +1,32 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typekit" as *;
 
 .header {
+    @include displaybackground;
     display: flex;
     width: $width;
     justify-content: space-between;
-    background-color: white;
     height: 100px;
 
     &__left-side {
         display: flex;
         align-items: center;
+        margin-left: 16px;
 
         & > a {
             margin: 16px;
+            text-decoration: none;
+            color: $black;
+
+            & > img {
+                width: 96px;
+                height: 96px;
+            }
+
+            & > div {
+                @include subheader;
+            }
         }
     }
 

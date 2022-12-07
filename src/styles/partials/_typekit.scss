@@ -1,7 +1,7 @@
 @use "variables" as *;
 
 @mixin pageheader {
-    font-size: 33px;
+    font-size: 64px;
     line-height: 44px;
     font-weight: 700;
 }
@@ -11,7 +11,7 @@
     font-weight: 700;
 }
 @mixin subheader {
-    font-size: 14px;
+    font-size: 24px;
     line-height: 22px;
     font-weight: 700;
 }
@@ -26,7 +26,7 @@
     font-weight: 700;
 }
 @mixin button {
-    font-size: 36px;
+    font-size: 32px;
     line-height: 20px;
     font-weight: 700;
 }

@@ -1,5 +1,6 @@
 import "./Header.scss";
 import { Link } from "react-router-dom";
+import hungrylogo from "../../assets/images/hungrylogo.png";
 
 export default function Header() {
     return (
@@ -7,7 +8,7 @@ export default function Header() {
             <header className="header">
                 <div className="header__left-side">
                     <Link to="/">
-                        <div>Logo</div>
+                        <img src={hungrylogo} alt="logo" />
                     </Link>
                     <Link to="/">
                         <div>Home</div>

@@ -1,16 +1,26 @@
 // Color Palate
 
-$brainflix-black: #323232;
-$brainflix-blue: #0095ff;
-$silver: #afafaf;
+//Color Scheme - Lemon Lime
+//https://hookagency.com/blog/website-color-schemes/
 
+$lime: #abd699;
+$lemon: #ffe26a;
+$lightlemon: rgb(255, 238, 170);
+$teal: #75c9b7;
+$mint: #c7ddcc;
+$navy: #16123f;
+$red: rgb(248, 122, 122);
+$orange: rgb(253, 217, 150);
+
+$logotext: #ff485e;
 $black: #000000;
-$primary: #000000;
-$secondary: #fb8332;
 $white: #ffffff;
-$offwhite: #fafafa;
-$mercury: #e1e1e1;
 
-// Media Sizing
+// Background colors
+
+@mixin displaybackground {
+    background-color: $white;
+    opacity: 0.95;
+}
 
 $width: 1280px;

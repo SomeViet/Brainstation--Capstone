@@ -3,19 +3,36 @@
 @use "../../styles/partials/typekit" as *;
 
 .home {
+    @include displaybackground;
     display: flex;
     flex-direction: column;
-    background-color: $offwhite;
 
+    &__container {
+        display: flex;
+        justify-content: center;
+    }
+    &__logo {
+        width: 100px;
+        height: 100px;
+        margin: 0px 32px;
+    }
     &__header {
         @include pageheader;
         align-self: center;
+        color: $logotext;
+    }
+
+    &__subheader {
+        @include subheader;
+        align-self: center;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-style: italic;
     }
 
     &__selection {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-        margin: 24px;
+        gap: 48px;
+        margin: 48px;
     }
 }

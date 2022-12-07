@@ -5,7 +5,7 @@ export default function FoodButton({ foodText }) {
     return (
         <>
             <Link to={"/foodsearch/" + foodText} className="food-button">
-                <button className="food-button">{foodText}</button>
+                <button className="food-button__button">{foodText}</button>
             </Link>
         </>
     );
