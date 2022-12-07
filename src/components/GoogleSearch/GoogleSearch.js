@@ -1,13 +1,16 @@
 import "./GoogleSearch.scss";
 import React, { useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
+import { Link, withRouter } from "react-router-dom";
 
-export default function GoogleSearch({ foodSearch }) {
+const API_KEY = process.env.REACT_APP_API_KEY;
+
+function GoogleSearch({ foodSearch }) {
     // Using functional hooks for state
     const [location, setLocation] = useState({ lat: 49.2827, lng: -123.1207 });
 
     const loader = new Loader({
-        apiKey: "AIzaSyC6axoOOEq8kjBPHcDmJM5mCNyU__-k4Vc",
+        apiKey: API_KEY,
         version: "weekly",
         libraries: ["places"],
     });
@@ -172,14 +175,23 @@ export default function GoogleSearch({ foodSearch }) {
 
     return (
         <>
-            <div id="container">
-                <div id="sidebar">
-                    <h2> {"← " + foodSearch}</h2>
-                    <ul id="places"></ul>
-                    <button id="more">Load more results</button>
+            <div id="container" className="googlesearch">
+                <div id="sidebar" className="googlesearch__sidebar">
+                    <Link
+                        to={"/cuisine/" + foodSearch}
+                        className="googlesearch__back-button"
+                    >
+                        <h2 className="cuisine">{"← " + foodSearch}</h2>
+                    </Link>
+                    <ul id="places" className="googlesearch__places"></ul>
+                    <button id="more" className="googlesearch__more-button">
+                        Load more results
+                    </button>
                 </div>
                 <div id="map" className="map"></div>
             </div>
         </>
     );
 }
+
+export default withRouter(GoogleSearch);

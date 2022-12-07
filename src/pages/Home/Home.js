@@ -4,7 +4,7 @@ import "./Home.scss";
 import axios from "axios";
 import hamburgerlogo from "../../assets/images/hamburgerlogo.png";
 
-const PORT = "1234";
+const PORT = process.env.REACT_APP_DATAPORT;
 
 export default class Home extends React.Component {
     constructor() {

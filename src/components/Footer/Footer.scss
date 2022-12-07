@@ -1,10 +1,9 @@
-@use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 
 .footer {
     @include displaybackground;
     display: flex;
-    width: $width;
+    width: $displaywidth;
 
     height: 100px;
     align-items: center;

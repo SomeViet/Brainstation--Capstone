@@ -1,4 +1,3 @@
-@use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/typekit" as *;
 
@@ -6,6 +5,7 @@
     @include displaybackground;
     display: flex;
     flex-direction: column;
+    width: $displaywidth;
 
     &__container {
         display: flex;

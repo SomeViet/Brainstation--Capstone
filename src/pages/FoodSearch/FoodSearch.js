@@ -5,7 +5,6 @@ import { withRouter } from "react-router-dom";
 
 function FoodSearch(props) {
     let foodSearch = props.match.params.foodName;
-
     return (
         <>
             <GoogleSearch foodSearch={foodSearch} />

@@ -5,7 +5,7 @@
 .header {
     @include displaybackground;
     display: flex;
-    width: $width;
+    width: $displaywidth;
     justify-content: space-between;
     height: 100px;
 

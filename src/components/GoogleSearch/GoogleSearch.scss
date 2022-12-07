@@ -1,36 +1,39 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typekit" as *;
+
 .map {
     height: 700px;
     width: 920px;
 }
 
-.searchbox {
-    height: 20px;
-    width: 600px;
-}
-
-#sidebar {
-    flex-basis: 80px;
-    flex-grow: 1;
-    padding: 0px;
-    max-width: 360px;
-    // height: auto;
-    box-sizing: border-box;
-    overflow: auto;
-}
-
-#container {
+.googlesearch {
     display: flex;
-}
 
-#sidebar {
-    display: flex;
-    flex-direction: column;
-}
+    &__sidebar {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 80px;
+        flex-grow: 1;
+        padding: 0px;
+        max-width: 360px;
+        // height: auto;
+        box-sizing: border-box;
+        overflow: auto;
+    }
 
-h2 {
-    font-size: 24px;
-    margin: 0 0 5px 0;
-    flex-grow: 0;
+    &__back-button {
+        display: flex;
+        align-items: center;
+        height: 48px;
+        padding: 12px;
+        text-decoration: none;
+        background-color: $lemon;
+        color: $black;
+    }
+
+    &__cuisine {
+        @include subheader;
+    }
 }
 
 ul {

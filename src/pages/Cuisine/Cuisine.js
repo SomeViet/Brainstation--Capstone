@@ -4,7 +4,7 @@ import axios from "axios";
 import { FoodButton } from "../../components/index";
 import { withRouter } from "react-router-dom";
 
-const PORT = "1234";
+const PORT = process.env.REACT_APP_DATAPORT;
 
 class Cuisine extends React.Component {
     constructor(props) {
