@@ -27,25 +27,38 @@
         height: 48px;
         padding: 12px;
         text-decoration: none;
-        background-color: $lemon;
+        background-color: $listcolor1;
         color: $black;
+        cursor: pointer;
     }
 
     &__cuisine {
         @include subheader;
     }
-}
 
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    height: 600px;
-    overflow-y: scroll;
+    &__places {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        height: 600px;
+        overflow-y: scroll;
+        flex-grow: 1;
+        background-color: $listcolor2;
+    }
+
+    &__location-button {
+        background-color: white;
+        border: 3px solid grey;
+        height: 40px;
+    }
+
+    &__more-button {
+        background-color: $listcolor1;
+    }
 }
 
 li {
-    background-color: #f1f1f1;
+    background-color: $listcolor1;
     padding: 10px;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -55,5 +68,5 @@ li {
 }
 
 li:nth-child(odd) {
-    background-color: #fcfcfc;
+    background-color: $listcolor2;
 }

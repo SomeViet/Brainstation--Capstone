@@ -1,13 +1,18 @@
 import "./GoogleSearch.scss";
 import React, { useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter, useHistory } from "react-router-dom";
 
+// https://developers.google.com/maps
+// Documentation for Google Maps API
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 function GoogleSearch({ foodSearch }) {
     // Using functional hooks for state
-    const [location, setLocation] = useState({ lat: 49.2827, lng: -123.1207 });
+    // Initial location from city of the user (another feature to be added, possibly after OAuth)
+    let [location, setLocation] = useState({ lat: 49.2827, lng: -123.1207 });
+
+    let { goBack } = useHistory();
 
     const loader = new Loader({
         apiKey: API_KEY,
@@ -18,25 +23,26 @@ function GoogleSearch({ foodSearch }) {
     loader
         .load()
         .then((google) => {
-            // Location
-
             // Load Map
-            const map = new google.maps.Map(document.getElementById("map"), {
+            let map, infoWindow;
+            map = new google.maps.Map(document.getElementById("map"), {
                 center: location,
-                zoom: 15,
+                zoom: 14,
                 disableDefaultUI: true,
                 zoomControl: true,
             });
 
-            const infoWindow = new google.maps.InfoWindow();
+            let placesList = document.getElementById("places");
 
             // Adds the current location button
-            const locationButton = document.createElement("button");
-            locationButton.textContent = "My Current Location";
-            locationButton.classList.add("googlesearch");
-            map.controls[google.maps.ControlPosition.TOP_RIGHT].push(
+            let locationButton = document.createElement("button");
+            locationButton.textContent = "Current Location";
+            locationButton.classList.add("googlesearch__location-button");
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(
                 locationButton
             );
+
+            infoWindow = new google.maps.InfoWindow();
 
             // Event listener for current location
             locationButton.addEventListener("click", () => {
@@ -48,13 +54,15 @@ function GoogleSearch({ foodSearch }) {
                                 lat: position.coords.latitude,
                                 lng: position.coords.longitude,
                             };
-                            setLocation(pos);
-                            console.log(location);
 
                             infoWindow.setPosition(pos);
-                            infoWindow.setContent("You are here");
+                            infoWindow.setContent("Location found.");
                             infoWindow.open(map);
                             map.setCenter(pos);
+
+                            // Re-rendering of state is removing marker.
+                            setLocation(pos);
+                            placesList.innerHTML = "";
                         },
                         // Error handling if browser doesn't have geolocation
                         () => {
@@ -96,7 +104,6 @@ function GoogleSearch({ foodSearch }) {
                 places: google.maps.places.PlaceResult[],
                 map: google.maps.Map
             ) {
-                const placesList = document.getElementById("places");
                 for (const place of places) {
                     if (place.geometry && place.geometry.location) {
                         // const image = {
@@ -114,14 +121,12 @@ function GoogleSearch({ foodSearch }) {
                         });
 
                         const li = document.createElement("li");
-
-                        li.textContent = place.name;
-                        placesList.appendChild(li);
-
                         // window.map = map;
                         li.addEventListener("click", () => {
                             map.setCenter(place.geometry.location);
                         });
+                        li.textContent = place.name;
+                        placesList.appendChild(li);
                     }
                 }
             }
@@ -137,12 +142,12 @@ function GoogleSearch({ foodSearch }) {
             // Use PlacesService app and do a nearby search
             const service = new google.maps.places.PlacesService(map);
 
-            service.textSearch(
+            service.nearbySearch(
                 // Search criterias
                 {
                     location: location,
-                    radius: 300,
-                    query: foodSearch,
+                    radius: 1000,
+                    keyword: foodSearch,
                 },
                 // Callback
                 (
@@ -153,6 +158,7 @@ function GoogleSearch({ foodSearch }) {
                     // If error, stop here
                     if (status !== "OK" || !results) return;
                     // Invoke AddPlaces with arguments
+
                     addPlaces(results, map);
 
                     // Disable more button if less than 20 places
@@ -177,12 +183,11 @@ function GoogleSearch({ foodSearch }) {
         <>
             <div id="container" className="googlesearch">
                 <div id="sidebar" className="googlesearch__sidebar">
-                    <Link
-                        to={"/cuisine/" + foodSearch}
-                        className="googlesearch__back-button"
-                    >
-                        <h2 className="cuisine">{"← " + foodSearch}</h2>
-                    </Link>
+                    <div className="googlesearch__back-button" onClick={goBack}>
+                        <h2 className="googlesearch__cuisine">
+                            {"← " + foodSearch}
+                        </h2>
+                    </div>
                     <ul id="places" className="googlesearch__places"></ul>
                     <button id="more" className="googlesearch__more-button">
                         Load more results

@@ -57,7 +57,6 @@ class Cuisine extends React.Component {
     };
 
     render() {
-        console.log(this.state);
         return (
             <>
                 <main className="home">
