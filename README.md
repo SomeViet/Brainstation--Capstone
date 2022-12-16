@@ -1,70 +1,79 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Title
 
-## Available Scripts
+This project is based on Uber Eats and is designed with the User in mind. I made the project so it is a slightly improved UI, where Users get to see food choices, instead of the restaurants first.
 
-In the project directory, you can run:
+## Tech Stack
 
-### `npm start`
+**Client:** React, Redux, Javascript, 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Server:** Node, Express, Knex, MySQL, 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Geo-Location for Google Maps - Current Location
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage/Examples
 
-### `npm run eject`
+```javascript
+import Component from 'my-project'
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+function App() {
+  return <Component />
+}
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Install hungry with npm
 
-## Learn More
+- Front-end
+```bash
+  npm install react-router-dom@5.3
+  npm install @googlemaps/js-api-loader
+  npm install axios
+  npm install sass
+  
+  cd hungry
+```
+    
+    
+- Back-end
+```bash
+  npm install dotenv
+  npm install cors
+  npm install express
+  npm install knex
+  npm install mysql
+  
+  cd hungry-backend
+```
+    
+## Lessons Learned
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+What did you learn while building this project? What challenges did you face and how did you overcome them?
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Lessons
+- While an API Documentation may look overwhelming at first glance, just start using it one step at a time and get a basic API request before looking into the functionality
+- Even the simpliest of features may require extensive code, while complicated features can be solved with the simpliest solutions
+- I am a crappy designer. Creating an innovative design is not my strong suit.
 
-### Code Splitting
+Challenges
+- First time using an external API outside the BrainStation Material
+    - Faced it by repeatedly brute-force debugging via various console.logs throughout my code and identifying the error
+        - In the future, get the basic function running, and implement code slowly to minimize debugging
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Without detailed guidelines or a mockups, I was just freestyling my design, resulting in an "unpolished" application    
+    - After having a general template, map out the gutters/margins/design more with metrics
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Next Steps
+- Refactor code and components for reusablilty
+- Make use of Mixins more in order to minimize duplicate code, and ease changes in design
+- Implement Login and OAuth
+    - From this, implement restaurant favouriting
+    
