@@ -1,10 +1,13 @@
 import React from "react";
+import "./ContactUs.scss";
 
 export default class ContactUs extends React.Component {
     render() {
         return (
             <>
-                <div>This is the contact us page</div>
+                <main className="contact-us">
+                    <h1 className="contact-us__header">Contact Us</h1>
+                </main>
             </>
         );
     }
