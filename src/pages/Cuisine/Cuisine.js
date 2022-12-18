@@ -59,11 +59,11 @@ class Cuisine extends React.Component {
     render() {
         return (
             <>
-                <main className="home">
-                    <h1 className="home__header">
+                <main className="cuisine">
+                    <h1 className="cuisine__header">
                         {this.state.cuisineName} Cuisine
                     </h1>
-                    <div className="home__selection">
+                    <div className="cuisine__selection">
                         {this.state.foodData
                             ? this.state.foodData.map((foodData) => {
                                   return (

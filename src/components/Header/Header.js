@@ -17,7 +17,8 @@ export default function Header() {
                         <div>Contact Us</div>
                     </Link>
                 </div>
-                <div className="header__right-side">Login</div>
+                {/* Login Feature via OAuth was planned */}
+                {/* <div className="header__right-side">Login</div> */}
             </header>
         </>
     );
