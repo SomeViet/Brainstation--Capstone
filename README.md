@@ -1,12 +1,12 @@
-# Project Title
+# I AM HUNGRY
 
 This project is based on Uber Eats and is designed with the User in mind. I made the project so it is a slightly improved UI, where Users get to see food choices, instead of the restaurants first.
 
 ## Tech Stack
 
-**Client:** React, Redux, Javascript,
+**Client:** React, Javascript, Axios, SASS, ReactRouter
 
-**Server:** Node, Express, Knex, MySQL,
+**Server:** NodeJS, ExpressJS, Knex, MySQL, Cors
 
 ## Features
 
@@ -47,7 +47,6 @@ Lessons
 
 -   While an API Documentation may look overwhelming at first glance, just start using it one step at a time and get a basic API request before looking into the functionality
 -   Even the simpliest of features may require extensive code, while complicated features can be solved with the simpliest solutions
--   I am a crappy designer. Creating an innovative design is not my strong suit.
 
 Challenges
 
