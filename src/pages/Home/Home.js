@@ -4,7 +4,7 @@ import "./Home.scss";
 import axios from "axios";
 import hamburgerlogo from "../../assets/images/hamburgerlogo.png";
 
-const PORT = process.env.REACT_APP_DATAPORT;
+const SITE = process.env.REACT_APP_SERVER_URL;
 
 export default class Home extends React.Component {
     constructor() {
@@ -15,12 +15,13 @@ export default class Home extends React.Component {
     }
 
     componentDidMount() {
-        this.getCuisineData(PORT);
+        this.getCuisineData(SITE);
+        console.log(SITE);
     }
 
-    getCuisineData = (PORT) => {
+    getCuisineData = (SITE) => {
         axios
-            .get(`http://localhost:${PORT}/cuisine`)
+            .get(`${SITE}/cuisine`)
             .then((res) => {
                 this.setState({
                     cuisineData: res.data,
