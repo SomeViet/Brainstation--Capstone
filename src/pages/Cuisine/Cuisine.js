@@ -4,7 +4,7 @@ import axios from "axios";
 import { FoodButton } from "../../components/index";
 import { withRouter } from "react-router-dom";
 
-const PORT = process.env.REACT_APP_DATAPORT;
+const SITE = process.env.REACT_APP_SERVER_URL;
 
 class Cuisine extends React.Component {
     constructor(props) {
@@ -17,13 +17,13 @@ class Cuisine extends React.Component {
     }
 
     componentDidMount() {
-        this.getCuisineData(PORT);
-        this.getFoodData(PORT);
+        this.getCuisineData(SITE);
+        this.getFoodData(SITE);
     }
 
-    getCuisineData = (PORT) => {
+    getCuisineData = (SITE) => {
         axios
-            .get(`http://localhost:${PORT}/cuisine`)
+            .get(`${SITE}/cuisine`)
             .then((res) => {
                 // Set Cuisine Header
                 let filteredCuisine = res.data.find((cuisineData) => {
@@ -38,9 +38,9 @@ class Cuisine extends React.Component {
             });
     };
 
-    getFoodData = (PORT) => {
+    getFoodData = (SITE) => {
         axios
-            .get(`http://localhost:${PORT}/food`)
+            .get(`${SITE}/food`)
             .then((res) => {
                 // Get cuisine Id from props, filter food, and set state
                 let filteredFood = res.data.filter((food) => {
