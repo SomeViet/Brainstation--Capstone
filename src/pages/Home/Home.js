@@ -16,7 +16,6 @@ export default class Home extends React.Component {
 
     componentDidMount() {
         this.getCuisineData(SITE);
-        console.log(SITE);
     }
 
     getCuisineData = (SITE) => {
